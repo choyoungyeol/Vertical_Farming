@@ -1,0 +1,488 @@
+[
+    {
+        "id": "9e58c4ccc7412889",
+        "type": "tab",
+        "label": "플로우 9",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "245fddd9a02a0a1b",
+        "type": "serial in",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "serial": "c1103d13aef36fa3",
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "8ec3bbb48dbeb98c",
+                "d4f4920a1a34dad0",
+                "c2d9c804b6348057",
+                "47c4ca5f6879db2f",
+                "e106bce7088139d8",
+                "631b8bcf893bf890",
+                "2563df78e7e77c72",
+                "5b055e6da615a1e8"
+            ]
+        ]
+    },
+    {
+        "id": "8ec3bbb48dbeb98c",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Dry_Temp = parseFloat(output[0]);\nvar msg = {payload:Dry_Temp};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 432.7130889892578,
+        "y": 124.321044921875,
+        "wires": [
+            [
+                "4fa4cf643bde469c"
+            ]
+        ]
+    },
+    {
+        "id": "4fa4cf643bde469c",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Dry Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 630,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d4f4920a1a34dad0",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Wet_Temp = parseFloat(output[1]);\nvar msg = {payload:Wet_Temp};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "fb0e14a0cd3c67c3"
+            ]
+        ]
+    },
+    {
+        "id": "fb0e14a0cd3c67c3",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Wet Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 630,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c2d9c804b6348057",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Dew_Temp = parseFloat(output[2]);\nvar msg = {payload:Dew_Temp};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "5d0c5b27dcda8434"
+            ]
+        ]
+    },
+    {
+        "id": "47c4ca5f6879db2f",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Humi = parseFloat(output[3]);\nvar msg = {payload:Humi};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "c1838f20d5c773d5"
+            ]
+        ]
+    },
+    {
+        "id": "e106bce7088139d8",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar AH = parseFloat(output[4]);\nvar msg = {payload:AH};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "96f7af8c9a8abc58"
+            ]
+        ]
+    },
+    {
+        "id": "631b8bcf893bf890",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Psdt = parseFloat(output[5]);\nvar msg = {payload:Psdt};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "6e75b7a01d3ebeb6"
+            ]
+        ]
+    },
+    {
+        "id": "2563df78e7e77c72",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar VP = parseFloat(output[6]);\nvar msg = {payload:VP};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 480,
+        "wires": [
+            [
+                "f3139f8eb5dfab46"
+            ]
+        ]
+    },
+    {
+        "id": "5b055e6da615a1e8",
+        "type": "function",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar VPD = parseFloat(output[7]);\nvar msg = {payload:VPD};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "35075fd3f512df25"
+            ]
+        ]
+    },
+    {
+        "id": "96f7af8c9a8abc58",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 5,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Absolute Humidity",
+        "label": "kg/m3",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 630,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5d0c5b27dcda8434",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 3,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Dew-Point Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 650,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c1838f20d5c773d5",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 600,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6e75b7a01d3ebeb6",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 11,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Psdt",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 590,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f3139f8eb5dfab46",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 12,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Vapour Pressure",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 630,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "35075fd3f512df25",
+        "type": "ui_gauge",
+        "z": "9e58c4ccc7412889",
+        "name": "",
+        "group": "049b561f3f7336cb",
+        "order": 13,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "VPD",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 590,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "41c2ec7e3ca776d5",
+        "type": "ui_spacer",
+        "z": "9e58c4ccc7412889",
+        "name": "spacer",
+        "group": "049b561f3f7336cb",
+        "order": 6,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "b2cc7aceefa8acee",
+        "type": "ui_spacer",
+        "z": "9e58c4ccc7412889",
+        "name": "spacer",
+        "group": "049b561f3f7336cb",
+        "order": 7,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "f9ec1db575b6f7a0",
+        "type": "ui_spacer",
+        "z": "9e58c4ccc7412889",
+        "name": "spacer",
+        "group": "049b561f3f7336cb",
+        "order": 8,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "91ce23a204b342ab",
+        "type": "ui_spacer",
+        "z": "9e58c4ccc7412889",
+        "name": "spacer",
+        "group": "049b561f3f7336cb",
+        "order": 9,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "7e14147fbffbe03b",
+        "type": "ui_spacer",
+        "z": "9e58c4ccc7412889",
+        "name": "spacer",
+        "group": "049b561f3f7336cb",
+        "order": 10,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "c1103d13aef36fa3",
+        "type": "serial-port",
+        "serialport": "COM21",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "049b561f3f7336cb",
+        "type": "ui_group",
+        "name": "Temp2",
+        "tab": "231d2872e2b79428",
+        "order": 1,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "231d2872e2b79428",
+        "type": "ui_tab",
+        "name": "VerticalFarm",
+        "icon": "dashboard",
+        "order": 10,
+        "disabled": false,
+        "hidden": false
+    }
+]
