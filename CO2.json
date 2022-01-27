@@ -1,0 +1,225 @@
+[
+    {
+        "id": "588a326781268f7c",
+        "type": "tab",
+        "label": "플로우 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "57275dc6424da6ed",
+        "type": "serial in",
+        "z": "588a326781268f7c",
+        "name": "",
+        "serial": "066fa432219a662d",
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "d77c3f38921c00e0"
+            ]
+        ]
+    },
+    {
+        "id": "d77c3f38921c00e0",
+        "type": "function",
+        "z": "588a326781268f7c",
+        "name": "Temperature",
+        "func": "var output = msg.payload.split(\",\");\nvar co2 = parseFloat(output[0]);\nvar msg = {payload:co2};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "d17d8ff30f21676f"
+            ]
+        ]
+    },
+    {
+        "id": "d17d8ff30f21676f",
+        "type": "ui_gauge",
+        "z": "588a326781268f7c",
+        "name": "",
+        "group": "a5654c3180f7ae95",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "CO2 value",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 670,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "213d9a9af5b215b6",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "ae556553deea9192",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "befcbe1c1a7b850f",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "8e75f2616677754e",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "dd464d6047957484",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "7bb6d03a563f2d1f",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 13,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "68935d883ad435eb",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 14,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "3569d47b5d8bef90",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 15,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "b9324031617686ad",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 16,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "1137f6ca4dd1fe52",
+        "type": "ui_spacer",
+        "z": "588a326781268f7c",
+        "name": "spacer",
+        "group": "49eed59c.ec92cc",
+        "order": 17,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "066fa432219a662d",
+        "type": "serial-port",
+        "serialport": "COM3",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "a5654c3180f7ae95",
+        "type": "ui_group",
+        "name": "CO2",
+        "tab": "1fbbe0569e3d6415",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "49eed59c.ec92cc",
+        "type": "ui_group",
+        "name": "환경자료",
+        "tab": "2dcaea80111a676f",
+        "order": 7,
+        "disp": true,
+        "width": "26",
+        "collapse": false
+    },
+    {
+        "id": "1fbbe0569e3d6415",
+        "type": "ui_tab",
+        "name": "CO2",
+        "icon": "dashboard",
+        "order": 11,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2dcaea80111a676f",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
