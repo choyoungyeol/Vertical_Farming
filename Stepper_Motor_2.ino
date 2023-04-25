@@ -1,0 +1,31 @@
+#include <HCMotor.h>
+
+#define DIR_PIN 8 //스텝모터드라이버 DIR 연결핀
+#define CLK_PIN 9 //스텝모터드라이버 CLK 연결핀
+
+#define LLIMIT_PIN 24
+#define RLIMIT_PIN 22
+
+
+HCMotor HCMotor;
+
+int Speed = 10;
+
+void setup() 
+{
+  HCMotor.Init();
+  HCMotor.attach(0, STEPPER, CLK_PIN, DIR_PIN);
+  HCMotor.Steps(0,CONTINUOUS);
+  HCMotor.DutyCycle(0, Speed);
+  pinMode(LLIMIT_PIN, INPUT); 
+  pinMode(RLIMIT_PIN, INPUT); 
+}
+
+void loop() 
+{
+  if (digitalRead(LLIMIT_PIN) == LOW)
+    HCMotor.Direction(0, FORWARD);
+  else if (digitalRead(RLIMIT_PIN) == LOW)
+    HCMotor.Direction(0, REVERSE);
+  
+}
