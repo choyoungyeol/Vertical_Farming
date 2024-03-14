@@ -9,6 +9,8 @@ volatile double waterVolume;
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 int n = 0;
+int Relay_Value = 0;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -35,23 +37,29 @@ void loop() {
   int Manual_Value =  digitalRead(Manual);
   Serial.print(Water_Value);
   Serial.print(", ");
-  Serial.println(Water_Content);
-  Serial.print("Total Water Volume:");
+  Serial.print(Water_Content);
+  Serial.print(", ");
   Serial.print(waterVolume);
-  Serial.println(" L");
+  Serial.print(", ");
+  Serial.print(n);
+  Serial.print(", ");
+  Serial.println(Relay_Value);
   delay(500);
 
   if (n < 20) {
     if (Water_Content <= 30) {
       digitalWrite(Relay, HIGH);
+      Relay_Value = 1;
       n = n + 1;
     }
     if (Water_Content >= 35) {
       digitalWrite(Relay, LOW);
+      Relay_Value = 0;
       n = 0;
     }
   } else {
     digitalWrite(Relay, LOW);
+    Relay_Value = 0;
     n = 0;
   }
 
